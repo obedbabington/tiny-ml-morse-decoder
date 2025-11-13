@@ -17,8 +17,7 @@ Before we can run a Neural Network, we need to build one! This step is done in *
 **File:** `MorseAI_Workshop_Notebook.ipynb`  
 **What it does:** This interactive notebook guides you through 10 steps of the model development process, from loading data to training the model and exporting the model's parameters for our C code.
 
-**File:** `morse_code_data.csv`
-**What it does:** This file contains the morse code timings that will be loaded to train the model. A.k.a, our dataset. 
+**File:** `morse_code_data.csv`  
  
 ---
 
