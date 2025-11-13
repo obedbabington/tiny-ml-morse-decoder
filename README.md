@@ -1,4 +1,4 @@
-# MorseAI Workshop: From Taps to Text 🧠
+# MorseAI Workshop: From Taps to Text 🟢⚫�
 
 Welcome to the **Morse Code AI Workshop**!
 
@@ -12,11 +12,14 @@ The project is broken down into three main parts, which you can follow along in 
 
 ### 1. Developing the Model 🧠
 
-Before we can run a Neural Network, we need to build one! This step is done in **Python** using Google Colab. We'll load a dataset of Morse code timings, build a simple NN, and train it to recognize the letters **A** through **J**.
+Before we can run a Neural Network, we need to build one! This step is done in **Python** using Google Colab. We'll load a dataset of collected Morse code timings, build a simple NN, and train it to recognize the letters **A** through **J**.
 
 **File:** `MorseAI_Workshop_Notebook.ipynb`  
-**What it does:** This interactive notebook guides you through all 10 steps of the AI development process, from loading data to training the model and exporting the final weights for our C code.
+**What it does:** This interactive notebook guides you through 10 steps of the model development process, from loading data to training the model and exporting the model's parameters for our C code.
 
+**File:** `morse_code_data.csv`
+**What it does:** This file contains the morse code timings that will be loaded to train the model. A.k.a, our dataset. 
+ 
 ---
 
 ### 2. Encoding the Morse Signals 💻
