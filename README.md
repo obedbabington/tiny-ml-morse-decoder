@@ -1,4 +1,4 @@
-# MorseAI Workshop: From Taps to Text 🟢⚫�
+# MorseAI Workshop: From Taps to Text 🟢⚫
 
 Welcome to the **Morse Code AI Workshop**!
 
@@ -17,19 +17,20 @@ Before we can run a Neural Network, we need to build one! This step is done in *
 **File:** `MorseAI_Workshop_Notebook.ipynb`  
 **What it does:** This interactive notebook guides you through 10 steps of the model development process, from loading data to training the model and exporting the model's parameters for our C code.
 
-**File:** `morse_code_data.csv`  
- 
+**File:** `morse_code_data.csv`
+*What it is:* The dataset that will be loaded to train the model. It consists of about 450 timing entries for the Morse code letters A - J. 
+
 ---
 
 ### 2. Encoding the Morse Signals 💻
 
 This is the "hardware" part of our project. These files set up the STM32's button, timer, and UART (serial port). Their job is to listen for your button presses and "encode" them into a sequence of timings.
 
-**`Core/Src/morse_encode.h`**  
-*What it is:* The "header" file. Like a table of contents for our hardware driver, telling other files what functions are available (like `TIM2_Init()` or `sendString()`).
+**`Core/Inc/morse_encode.h`**  
+*What it is:* The "header" file. Like a table of contents, telling other files what functions are available.
 
 **`Core/Src/morse_encode.c`**  
-*What it is:* The "implementation" file. Low-level code that configures the hardware and handles the button press interrupts.
+*What it is:* The "implementation" file. Low-level code that turns button presses into timing data using interrupts.
 
 **`Core/Src/main.c`**  
 *What it is:* The heart of the application. Initializes the system and contains the main `while(1)` loop. Acts as the "conductor" that waits for a signal from `morse_encode.c` and then decides what to do.
@@ -40,14 +41,14 @@ This is the "hardware" part of our project. These files set up the STM32's butto
 
 This is where the magic happens! These files contain the Neural Network model trained in Step 1, "hard-coded" in C. This code takes the timing sequence from the Encode step and runs inference to decode it into a letter.
 
-**`Core/Src/morse_decode.h`**  
+**`Core/Inc/network_parameters.h`**  
+*What it is:* The model's "brain." Holds the weights and biases exported from the Python notebook. This file will not be provided in this repository as you are expected to follow the steps to produce it from the Python notebook. 
+
+**`Core/Inc/morse_decode.h`**  
 *What it is:* The header file for the neural network. Defines the `run_inference()` function so `main.c` can call it.
 
 **`Core/Src/morse_decode.c`**  
 *What it is:* The Neural Network itself! Contains all the math (like `dense_layer1()`, `relu()`, `softmax()`) that performs the AI prediction.
-
-**`Core/Src/morse_nn_model.h`**  
-*What it is:* The model's "brain." Holds the weights and biases exported from your Python notebook.
 
 ---
 
