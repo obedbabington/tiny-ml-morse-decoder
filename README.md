@@ -10,7 +10,7 @@ The project is broken down into three main parts, which you can follow along in 
 
 ## 🎯 Workshop Flow
 
-### 1. Developing the Model 🧠
+### 1. Developing the Model
 
 Before we can run a Neural Network, we need to build one! This step is done in **Python** using Google Colab. We'll load a dataset of collected Morse code timings, build a simple NN, and train it to recognize the letters **A** through **J**.
 
@@ -22,7 +22,7 @@ Before we can run a Neural Network, we need to build one! This step is done in *
 
 ---
 
-### 2. Encoding the Morse Signals 💻
+### 2. Encoding the Morse Signals
 
 This is the "hardware" part of our project. These files set up the STM32's button, timer, and UART (serial port). Their job is to listen for your button presses and "encode" them into a sequence of timings.
 
@@ -37,7 +37,7 @@ This is the "hardware" part of our project. These files set up the STM32's butto
 
 ---
 
-### 3. Decoding the Signals 🚀
+### 3. Decoding the Signals
 
 This is where the magic happens! These files contain the Neural Network model trained in Step 1, "hard-coded" in C. This code takes the timing sequence from the Encode step and runs inference to decode it into a letter.
 
